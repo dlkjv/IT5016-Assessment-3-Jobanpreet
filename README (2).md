@@ -7,127 +7,128 @@ This document outlines the software design principles followed in the developmen
 
 # Single Responsibility Principle (SRP)
 
-The Single Responsibility Principle (SRP) states that a class or function should have only one reason to change. In the provided code, each function has a single responsibility:
+The Single Responsibility Principle (SRP) is aimed at that a given class or function can only change for one single reason. In the provided code, each function has a single responsibility:
 
-- write_key: This function is responsible for generating a key using the Fernet algorithm and writing it to a file named "key.key". It has a single reason to change, which is to modify the key generation or writing process.
+write_key: This function is charged with the responsibility of creating a key through the Fernet algorithm and save the key to “key.key” file. It has a single reason for change; this is to change the way the key, or writing part is produced.
 
-- load_key: This function is responsible for loading the key from the "key.key" file. It has a single reason to change, which is to modify the key loading process.
+load_key: This function is also used to read the key from the file name key.key. It has only one reason to change namely to change the key loading process.
 
-- view: This function is responsible for viewing the encrypted passwords stored in the "password.txt" file. It has a single reason to change, which is to modify the password viewing process.
+view: This function is actually used to read the encrypted passwords that are stored in a file known as “Password.txt” The only purpose which is provided in the algorithm is altering the method of password viewing.
 
-- add: This function is responsible for adding a new password to the "password.txt" file. It has a single reason to change, which is to modify the password adding process.
+add: This function is well targeted at creating a new password and converting the resultant value into a file format which will be in form of password.txt. It has been design to change solely for the aim of changing the password adding process.
 
-By following the SRP, the code is more modular, maintainable, and easier to understand.
+For writing code in accordance with the SRP, the advantages which come out are It makes the code highly more modularity so that it is easier to manage and understand.
 
 # Don't Repeat Yourself (DRY)
-The Don't Repeat Yourself (DRY) principle states that code should not be duplicated. In the provided code, the DRY principle is followed by:
+According to the principles, one of them is known as Don ‘t Repeat Yourself (DRY), and it implies that there should not be different code. In the provided code, the DRY principle is followed by:
 
-- Using functions to perform specific tasks, such as write_key, load_key, view, and add. This avoids duplicating code and makes it more maintainable.
+•Using simple functions that are meant to do specific task such as write_key, load_key, view, add. This is the case because, it minimizes on code duplication as well as the management of the duplicated code in the long run.
 
-- Avoiding duplicated logic in the view and add functions, which both use the fer object to encrypt and decrypt passwords.
+Preventing code duplication of the view and add functions that makes use of the fer object to encrypt and decrypt passwords.
 
 # Keep it Simple,Stupid (KISS)
- The Keep It Simple, Stupid (KISS) principle states that simplicity should be preferred over complexity. In the provided code, the KISS principle is followed by:
+ KISS is an acronym meaning keep it simple style, which means that the design should be as simple as possible. In the provided code, the KISS principle is followed by:
 
-- Using simple and straightforward logic in the functions, avoiding complex algorithms or data structures.
+It will prevent making the execution of the functions too complicated by not using such equations and data types.
 
-- Using clear and concise variable names and function names, making it easy to understand the code.
+Properly naming of the variable and function so as to make it easier to relate to the written language.
 
 # You Ain't Gonna Need It (YAGNI) 
-The You Ain't Gonna Need It (YAGNI) principle states that features or code should not be added unless they are necessary. In the provided code, the YAGNI principle is followed by:
+YAGNI stands for You Ain’t Gonna Need It; it says an application should not be designed to have features or code that will not be needed. In the provided code, the YAGNI principle is followed by:
 
-- Only implementing the necessary features for a password manager, without adding unnecessary complexity or functionality.
+- Simply performing all the functional requirements of a password manager without going over the top on extra features.
 
-- Avoiding premature optimization or feature creep, focusing on the core functionality of the application.
+Preventing either premature optimization or the addition of new features ad infinitum, narrowing down to the application’s key value proposition.
 
 # Refractor
-The Refractor Mercilessly principle states that code should be continuously refactored to improve its quality and maintainability. In the provided code, the Refractor Mercilessly principle is followed by:
+In a line, The Refractor Mercilessly principle is an Agile principle that states that the code with the team should always be refactored. In the provided code, the Refractor Mercilessly principle is followed by:
 
-- Continuously reviewing and refactoring the code to ensure it is modular, readable, and maintainable.
+Once in a while to recap it and refactor where changing the code means making it more modular, readable, and maintainable.
 
-- Improving the code organization, naming conventions, and coding standards to make it easier to understand and maintain.
+Refactoring, as first step, can be defined as the action of turning the code into a more structured, better named, form that is easier to maintain.
 
 # Clean Code
-The Clean Code principle states that code should be written in a way that is easy to read, understand, and maintain. In the provided code, the Clean Code principle is followed by:
+According to the Clean Code code should be clean to understand and follow, with no extra complications involved. In the provided code, the Clean Code principle is followed by:
 
-- Using clear and concise variable names and function names, making it easy to understand the code.
-- Using whitespace and indentation to make the code readable.
-- Avoiding duplicated code and logic, making it easier to maintain.
+Writing code using good assignment of variables names and the function names so that the code could be easily understandable.
+Nevertheless, there is the specific responsibility of HMS to use spaces and tab stops so that such things do not occur making the script hardly readable.
+It serves to prevent excessive usage of code, which overlaps, and a lot of logic that is undesirable when maintaining it.
+
 
 # Open-Closed Principle (OCP)
-The Open-Closed Principle (OCP) states that software entities (classes, modules, functions, etc.) should be open for extension but closed for modification. In the provided code, the OCP principle is followed by:
+The OCP can be explained as follows: Software artifacts; being classes, modules or functions, should be open to inclusion of new functionality but closed to alteration. In the provided code, the OCP principle is followed by:
 
-- Designing the code to be modular and extensible, allowing for new features to be added without modifying the existing code.
+Ensuring its easy to modify, that is the code aspect that it has to be designed in such a way that it is possible to add some new features in the future, without disturbing the existing code.
 
-- Using abstraction and interfaces to decouple dependencies and make the code more flexible.
+But, surprisingly, it is often possible to employ abstraction and interfaces to make the dependencies less evil and more innocent to the code.
+
 
 # SOLID Principles
-The SOLID principles are a set of design principles that aim to promote simpler, more robust, and updatable code. In the provided code, the SOLID principles are followed by:
+The SOLID principles are a list of principles of software design that are intended to help develop software that is easier to evolve than the existing software. In the provided code, the SOLID principles are followed by:
 
-- Single Responsibility Principle (SRP): Each function has a single responsibility, making the code more modular and maintainable.
+- Single Responsibility Principle (SRP): Every function serves one purpose, and it makes the codebase clean and easier to manage.
 
-- Open-Closed Principle (OCP): The code is designed to be open for extension but closed for modification, making it more flexible and maintainable.
+- Open-Closed Principle (OCP): The code should always be open for extension and closed for modification; this means that it is more flexible compared to the other.
 
-- Liskov Substitution Principle (LSP): The code uses abstraction and interfaces to ensure that subtypes can be used in place of base types, making it more flexible and maintainable.
+- Liskov Substitution Principle (LSP): The given code comprises polymorphism and as to the type of polymorphism occurs in the specific example is abstraction and interfaces to use subtypes for the base types.
 
-- Interface Segregation Principle (ISP): The code uses interfaces to define contracts and decouple dependencies, making it more modular and maintainable.
+- Interface Segregation Principle (ISP): Randomness is reduced because the interfaces in the code suggest some contracts and minimum dependency between the objects.
 
-- Dependency Inversion Principle (DIP): The code uses dependency injection to decouple dependencies and make it more modular and maintainable.
+- Dependency Inversion Principle (DIP): To increase modularity and maintainability the code applies Dependency Injection to take dependencies out of the classes and make them more flexible.
 
 # Separation of Concerns (SoC)
-The Separation of Concerns (SoC) principle states that a system should be divided into separate, independent components or modules, each handling a specific concern. In the provided code, the SoC principle is followed by:
+Concern Separation (SoC) postulates that a system should be decomposed into several, independent yet interconnected parts each of which deals with a particular concern. In the provided code, the SoC principle is followed by:
 
 - Dividing the code into separate functions, each handling a specific concern:
-- Key management (generation, loading)
-Password management (viewing, adding)
-- Using separate files for storing the key ("key.key") and passwords ("password.txt"), which separates the concerns of key management and password management.
+Key management (generation, loading and removing)
+Passwords for viewing or adding (managing.)
+The decision splits the creation and control of keys and passwords into two areas.
 
 # Code Organization
-The code is organized into logical sections, with each function performing a specific task. This makes it easier to understand and maintain.
+The code is divided into separate sections – there are functions that accomplish certain and distinct operations. This is because it’s easier to comprehend and manage than an object-oriented design.
 
 # Code Quality
 The code follows best practices for coding standards and conventions, such as:
 
-- Using meaningful variable names and function names
-- Using whitespace and indentation to make the code readable
-- Using comments to explain the code
+- Meaningful variable names and meaningful function names
+Controlling using the concept of whitespace and indentation to make the code a little more readable.
+– How to comment the code Just as a side note: I was really confused about what<E2/rd motivations> I was doing at the time, and I suggested using comments to explain the code.
 
 # Security
-The code uses Fernet encryption to securely store and retrieve passwords. This ensures that the passwords are protected from unauthorized access.
+For the passcode encryption/decryption in the code Fernet cryptography is employed. This makes it safe for passwords entered, and only the people that may wish to access it will do so safely.
 
-By following these software design principles, the code is maintainable, scalable, and efficient, and ensures the security of the password manager application.
+Thus, through considering all these software design principles, the remained code is maintainable, scalable and efficient as well as provides password manager application security features.
 
 --Code Detailed Explanation--
 
 # Password Manager
 
-This password manager is a simple command-line application that uses the Fernet symmetric encryption algorithm from the cryptography library to store and retrieve passwords. The application is designed to provide a secure way to store and manage passwords for multiple accounts.
+It is a basic password manager that is a command line tool which uses symmetric encryption known as Fernet from the cryptography library. The application is basically an interface that can be used to securely store passwords for multiple accounts.
 
 # Features
-- Generates a unique encryption key for secure password storage
+Creates an encryption key for passwords storage.
 
-- Stores passwords in an encrypted file
+– Abuses are logged in a text file and passwords are stored encrypted on the local storage.
 
-- Allows users to add new passwords and view existing ones
+– The provided application enables users to create new passwords and also display the existing ones.
 
-- Provides a simple command-line interface for user interaction
+- Gives user interface through the command line interfaces.
 
 # How To use
-- Run the application by executing the Python script.
-- The application will prompt you to enter a mode: 'add' to add a new password, 'view' to view existing passwords, or 'q' to quit.
+Start the application through the Python script.
+- The application will prompt you to enter a mode: They are ‘add’ to give new password, ‘view’ to see the passwords or ‘q’ to exit.
 
-- If you choose 'add', you will be prompted to enter the account name and password. The password will be encrypted and stored in the password file.
+If you choose ‘add’, type in the account name and password. The password will be stored in encrypted form in the password file.
 
-- If you choose 'view', the application will display the account names and decrypted passwords.
-You can exit the application by entering 'q'.
+: If you select ‘view’ the application shows the account names and decrypted passwords.
+It will mean that you can leave the application by typing ‘q’.
+
 
 # Security
-- The encryption key is generated using the Fernet algorithm and stored in a file named "key.key".
+Fernet is the chosen algorithm for creating an encryption key and this is stored under the file name “key.key”.
 
-- The passwords are stored in an encrypted file named "password.txt".
+The passwords are saved into a file named “password.txt” and they are encrypted.
 
-- The application uses the Fernet algorithm to encrypt and decrypt the passwords.
+– The application uses Fernet Algorithm to perform both encryption and decryption of the passwords.
 
-# Requirements
-- Python 3.x
-- cryptography library
+
